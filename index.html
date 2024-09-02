@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boas vindas!</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="cabecalho">
+            <div class="perfil">
+                <img src="fotoPort.jpg" class="perfilFoto"/>
+                <div class="titulo">
+                    <h1>Gabriel Collaço Camargo</h1>
+                    <h2>Apenas um estudante de 22 anos cursando <br>Análise e Desenvolvimento de Sistemas.</h2>
+                </div>
+            </div>
+
+            <!-- Botão para trocar a paleta de cores da página -->
+            <div class="tema">
+                <button id="toggleTheme">Modo escuro</button>
+            </div>
+        </header>
+
+
+        <!-- Div para cada página, apenas uma visível de cada vez -->
+        <div id="sobreMim" class="page" style="display: none;">
+            <div class="contentText">
+                <h2 style="margin-top: 5px;">Um pouco sobre mim.</h2>                   <!-- Adicionei um style para mudar uma coisa simples -->
+                <p>
+                    Sou um jovem profissional de 22 anos, 
+                    atualmente cursando Análise e Desenvolvimento de Sistemas (ADS). 
+                    Com uma sólida base em diversas áreas da tecnologia da informação, 
+                    meu conhecimento abrange desde manutenção e configuração de hardware 
+                    até a administração básica de redes e máquinas virtuais.
+                </p>
+                <p>
+                    Atualmente, atuo na manutenção e configuração de computadores, 
+                    notebooks e impressoras, além de gerenciar o acesso a redes, garantindo 
+                    que todos os sistemas estejam operando de maneira eficiente e segura. Minha 
+                    experiência me permite identificar e solucionar problemas com agilidade, sempre 
+                    buscando as melhores práticas e novas soluções tecnológicas.
+                </p>
+                <p>
+                    Estou em constante aprendizado e disposto a aplicar meu conhecimento 
+                    para contribuir ativamente em novos desafios profissionais. Se você busca 
+                    alguém comprometido, com habilidade técnica e vontade de crescer, estou à disposição 
+                    para colaborar com seu projeto ou empresa.
+                </p>
+            </div>
+        </div>
+
+        <div id="formacaoEduc" class="page" style="display: none;">
+            <div class="contentText">
+                <h2 style="margin-top: 5px;">Um pouco do que já fiz e aprendi.</h2>      <!-- Adicionei um style para mudar uma coisa simples -->
+                <p>Fui autodidata no aprendizado de Inglês desde muito cedo, assim como em manutenção e configuração
+                de computadores, e linguagens de programação como JavaScript e Python. Estou treinando meu HTML e CSS, conforme o passar
+                das aulas. Ainda estou em processo de aperfeiçoamento do que já sei, dedicação no que estou aprendendo e preparação para
+                o que vou aprender.
+                </p>
+            </div>
+        </div>
+
+        <div id="projetos" class="page" style="display: none;">
+            <div class="row">
+                <div class="imgProjetos">
+                    <button onclick="showProject('calculadora')" class="imgButton">
+                        <img src="calculadora.png" alt="Calculadora" class="clickableImg">
+                        <p class="imgCaption">Calculadora</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="contato" class="page" style="display: none;">
+            <div class="contentText">
+                <h2 style="margin-top: 1px;">Contato</h2>                                <!-- Adicionei um style para mudar uma coisa simples -->
+                <p class="contactText">Você pode entrar em contato comigo preenchendo o formulário abaixo:</p>
+            </div>
+
+            <form class="contactForm">
+                <div class="formGroup">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formGroup">
+                    <label for="subject">Assunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="formGroup">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        
+
+        <!-- row será o meu "Menu" em formato de fila -->
+        <div class="row">
+            <div class="imgContainer">
+                <button onclick="showPage('sobreMim')" class="imgButton">
+                    <img src="sobremimIco.png" alt="Informações sobre mim." class="clickableImg">
+                    <p class="imgCaption">Sobre mim</p>
+                </button>
+            </div>
+
+            <div class="imgContainer">
+                <button onclick="showPage('formacaoEduc')" class="imgButton">
+                    <img src="formacao.png" alt="Um resumo sobre minha formação educacional." class="clickableImg">
+                    <p class="imgCaption">Formação <br> Educacional</p>
+                </button>
+            </div>
+
+            <div class="imgContainer">
+                <button onclick="showPage('projetos')" class="imgButton">
+                    <img src="htmlIco.png" alt="Alguns de meus projetos." class="clickableImg">
+                    <p class="imgCaption">Projetos</p>
+                </button>
+            </div>
+
+            <div class="imgContainer">
+                <button onclick="showPage('contato')" class="imgButton">
+                    <img src="contato.png" alt="Meus meios de contato." class="clickableImg">
+                    <p class="imgCaption">Contato</p>
+                </button>
+            </div>
+
+        </div>
+
+
+        <div>
+            <!-- Seções para mostrar a calculadora, seu funcionamento e o resultado -->
+            <div id="resultadoCalculadora" class="resultado" style="display: none;">
+                <h2 class="calcNome">Calculadora</h2>
+                    <script>
+                        function createCalculator() {
+                            const container = document.getElementById('calculadora');
+                            container.innerHTML = `
+                                <input type="text" id="display" disabled>
+                                <div>
+                                    <button onclick="appendNumber('1')">1</button>
+                                    <button onclick="appendNumber('2')">2</button>
+                                    <button onclick="appendNumber('3')">3</button>
+                                    <button onclick="appendNumber('+')">+</button>
+                                </div>
+                                <div>
+                                    <button onclick="appendNumber('4')">4</button>
+                                    <button onclick="appendNumber('5')">5</button>
+                                    <button onclick="appendNumber('6')">6</button>
+                                    <button onclick="appendNumber('-')">-</button>
+                                </div>
+                                <div>
+                                    <button onclick="appendNumber('7')">7</button>
+                                    <button onclick="appendNumber('8')">8</button>
+                                    <button onclick="appendNumber('9')">9</button>
+                                    <button onclick="appendNumber('*')">*</button>
+                                </div>
+                                <div>
+                                    <button onclick="appendNumber('0')">0</button>
+                                    <button onclick="calculate()">=</button>
+                                    <button onclick="clearDisplay()">C</button>
+                                    <button onclick="appendNumber('/')">/</button>
+                                </div>
+                            `;
+                        }
+                    
+                        function appendNumber(num) {
+                            const display = document.getElementById('display');
+                            display.value += num;
+                        }
+                    
+                        function clearDisplay() {
+                            document.getElementById('display').value = '';
+                        }
+                    
+                        function calculate() {
+                            const display = document.getElementById('display');
+                            try {
+                                display.value = eval(display.value);
+                            } catch (e) {
+                                display.value = 'Error';
+                            }
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', createCalculator);
+                    </script>
+                <div id="calculadora"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

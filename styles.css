@@ -1,0 +1,298 @@
+a {
+  text-decoration: none;
+  border: none;
+}
+
+body {
+  background: linear-gradient(236.85deg, #662323, #1c1c1c);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.container {
+  background: linear-gradient(256.85deg, #f1f1f1, #c4c5c7);
+  color: #1c1c1c;
+  margin: 64px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px #000000;
+  padding: 64px;
+}
+
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.perfil {
+  display: flex;
+}
+
+
+.perfilFoto {
+  border-radius: 600px;
+  max-height: 210px;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-left: 90px;
+  margin-top: -10px;
+}
+
+
+.titulo {
+  padding: 0%;
+  margin-left: 32px;
+}
+
+
+.titulo h1 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 50px;
+}
+
+
+.titulo h2 {
+  font-weight: 400;
+  font-size: 22px;
+  margin-top: -20px;
+}
+
+
+.tema button {
+  
+  font-size: 24px;
+  font-weight: 400;
+  padding: 8px 16px;
+  background: #ecf4ff;
+  border-radius: 100px;
+  margin-top: 70px;
+  margin-right: 90px;
+}
+
+
+.tema button:hover {
+  background-color: #000000;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+
+.contentText {
+  font-size: 18px;
+  max-width: 1400px;
+  margin: 40px auto 40px;
+  padding: 20px;
+  background: linear-gradient(256.85deg, #f1f1f1, #c4c5c7);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.row {
+  display: flex;
+  gap: 50px;
+  margin-top: 50px;
+  margin-left: -30px;
+}
+
+
+.imgContainer {
+  background: #9eb1ee;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  text-align: center;
+  width: 500px;
+  height: 280px;
+}
+
+.imgProjetos {
+  border-radius: 10px;
+  width: 30px;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+
+.imgCaption {
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+
+.imgLink {
+display:  inline-block;
+}
+
+
+.imgButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none; /* Remove a borda azul ao focar */
+}
+
+
+.imgButton:focus {
+  outline: none; /* Remove a borda ao clicar ou focar */
+}
+
+
+.clickableImg {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+
+.dark .container {
+  background: #333;
+  color: #f1f1f1;
+}
+
+
+.dark .imgContainer {
+  background: #555;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+.dark .imgCaption {
+  color: #f1f1f1;
+}
+
+
+.dark .tema button {
+  background: #444;
+  color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+}
+
+
+.dark .tema button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+body.dark-mode .container {
+  background: #333;
+  color: #f1f1f1;
+}
+
+
+.dark .contentText {
+  background: #444444;
+  color: #f1f1f1;
+}
+
+
+.resultado {
+  margin-top: 40px;
+  padding: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+
+.dark .resultado {
+  margin-top: 40px;
+  padding: 20px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.dark .calcNome {
+  color: #1c1c1c;
+}
+
+
+.contactText {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+
+.contactForm {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.contactForm .formGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactForm label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 98%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contactForm textarea {
+  resize: vertical; 
+  max-height: 200px; 
+  overflow: auto; 
+}
+
+.contactForm button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.contactForm button:hover {
+  background-color: #45a049;
+}
+
+
+.dark .contactForm label {
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.dark .contactForm {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
